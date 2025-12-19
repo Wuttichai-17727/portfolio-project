@@ -1,5 +1,15 @@
 import { MdNavigateNext } from "react-icons/md";
-const products = [
+interface productItem {
+    id : number;
+    name: string;
+    href:string;
+    imageSrc:string;
+    imageAlt:string;
+    price:string;
+    color:string;
+
+}
+const products:productItem[] = [
   {
     id: 1,
     name: 'Basic Tee',
