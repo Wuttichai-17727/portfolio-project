@@ -10,10 +10,10 @@ const Navbar = () => {
       <nav>
         <Disclosure
           as="nav"
-          className=" bg-white shadow-sm border-b border-gray-100"
+          className=" bg-white shadow-sm border-b border-gray-100 "
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 jus items-center">
+            <div className="flex h-16 justify-between items-center">
               <HamburgerMenu />
               <h1 className=" ml-5 text-blue-600 dark:text-sky-400 text-[28px]">
                 Megamart

@@ -59,7 +59,7 @@ const products:productItem[] = [
 
 export default function ProductList() {
   return (
-    <div className="bg-white">
+    <div className="bg-white ">
       <div className=" mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
         <div className=" border-b-1  border-gray-200 justify-between flex  items-center mb-5 pb-3">
         <h2 className="text-[24px]  tracking-tight text-[#666666]">Grab the best deal on <span className="text-blue-500">Smartphones</span></h2>
