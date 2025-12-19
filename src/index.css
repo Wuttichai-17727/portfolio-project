@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* ======================
+   GLOBAL LAYOUT SYSTEM
+   ====================== */
+
+/* รีเซ็ตพื้นฐาน */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f9fafb;
+}
+
+/* container กลางของทุกหน้า */
+.layout {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* responsive padding */
+@media (min-width: 640px) {
+  .layout {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* navbar สูงเท่ากันทุกหน้า */
+.navbar-height {
+  height: 4rem; /* 64px */
+}

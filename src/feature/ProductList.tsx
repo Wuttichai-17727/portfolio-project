@@ -1,4 +1,5 @@
 import { MdNavigateNext } from "react-icons/md";
+
 interface productItem {
     id : number;
     name: string;
@@ -59,25 +60,25 @@ const products:productItem[] = [
 
 export default function ProductList() {
   return (
-    <div className="bg-white ">
-      <div className=" mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
-        <div className=" border-b-1  border-gray-200 justify-between flex  items-center mb-5 pb-3">
+    <div className="bg-white">
+      <div className=" mx-auto max-w-full px-4 py-8 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
+        <div className=" border-b  border-gray-200 justify-between flex  items-center mb-5 pb-3">
         <h2 className="text-[24px]  tracking-tight text-[#666666]">Grab the best deal on <span className="text-blue-500">Smartphones</span></h2>
         <div className="flex items-center">
-            <a className="text-[18px]  tracking-tight text-black-400" href="#">View All</a><MdNavigateNext className="text-[#008ECC]  sm:size-6"/>
+            <a className="text-base text-gray-400 tracking-tight" href="#">View All</a><MdNavigateNext className="text-[#008ECC] text-xl sm:text-2xl"/>
         </div>
         </div>
         
 
-        <div className=" mt-5 flex justify-between gap-x-4 items-center">
+        <div className=" mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {products.map((product) => (
             <div key={product.id} className="group relative lg:h-full  ">
               <img
                 alt={product.imageAlt}
                 src={product.imageSrc}
-                className=""
+                className="w-full h-auto object-cover rounded-md"
               />
-              <div className=" mt-4 flex justify-between">
+              <div className="mt-4 flex justify-between items-center">
                 <div>
                   <h3 className="text-sm text-gray-700">
                     <a href={product.href}>

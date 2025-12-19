@@ -7,6 +7,7 @@
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
 /* #root {
   --navbar-height: 64px;
   --text-color: #333;

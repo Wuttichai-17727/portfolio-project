@@ -53,32 +53,36 @@ const categorys: categoryItem[] = [
 const Category = () => {
   return (
     <div className="bg-white ">
-      <div className=" mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
-        <div className="flex items-center border-b-1  border-gray-200 mb-5 justify-between">
-          <h2 className=" text-[24px] tracking-tight text-[#666666] mb-5 ">
+      <div className="mx-auto max-w-full px-4 py-8 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
+        <div className="flex items-center border-b border-gray-200 mb-5 justify-between">
+          <h2 className=" text-xl sm:text-2xl md:text-3xl tracking-tight text-gray-600">
             Shop From <span className="text-blue-500">Top Categories</span></h2>
             <div className="flex">
               <a
-                className="text-[18px]  tracking-tight text-black-400"
+                className="text-base sm:text-lg text-gray-400 tracking-tight"
                 href="#"
               >
                 View All
               </a>
-              <MdNavigateNext className="text-[#008ECC]  sm:size-6" />
+              <MdNavigateNext className="text-[#008ECC] text-xl sm:text-2xl" />
             </div>
           
         </div>
 
-        <div className=" flex justify-between item-center  ">
+        <div className=" mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 ">
           {categorys.map((category) => (
             <div key={category.id}>
-              <a href={category.href}>
-                <img
-                  className="rounded-full  w-20 h-20 overflow-hidden hover:border border-sky-500"
+              <a href={category.href}
+              className="flex flex-col items-center">
+                <div className="w-24 h-24">
+                  <img
+                  className="w-full h-full object-cover rounded-full border border-transparent hover:border-sky-500 transition-all"
                   src={category.imageSrc}
                   alt=""
                 />
-                <div className="flex justify-center">{category.typeItem}</div>
+                </div>
+                
+                <div className="text-center mt-2 text-sm font-medium">{category.typeItem}</div>
               </a>
             </div>
           ))}
