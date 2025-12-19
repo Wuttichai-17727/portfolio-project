@@ -54,7 +54,7 @@ const Advertise = () => {
         >
             {ads.map((ad) => (
                 <SwiperSlide key={ad.id}>
-                    <div className="relative h-[300px] md:h-[450px] w-full">
+                    <div className="relative h-[300px] md:h-[350px] w-full">
                     {/* Background Image */}
                     <img 
                         src={ad.image} 
