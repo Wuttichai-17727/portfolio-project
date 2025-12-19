@@ -1,15 +1,17 @@
 import { Disclosure } from "@headlessui/react";
-import HamburgerMenu from "./hamburgerMenu/hamburgerMenu";
+import HamburgerMenu from "./Events/hamburgerMenu";
 import { FaSearch, FaRegUser } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <Disclosure
+      as="nav"
+      className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50"
+    >
       {({}) => (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            
             {/* Left Section */}
             <div className="flex items-center gap-x-4">
               <HamburgerMenu />
@@ -33,18 +35,22 @@ const Navbar = () => {
             <div className="flex items-center gap-x-4">
               {/* Sign In / Cart */}
               <div className="flex items-center gap-x-4 text-gray-600 text-sm md:text-base">
-                <a className="flex items-center gap-1 hover:text-blue-600" href="#">
+                <Link to="/signin"
+                  className="flex items-center gap-1 hover:text-blue-600"
+                >
                   <FaRegUser className="text-[#008ECC]" />
                   <span className="hidden sm:inline">Sign In/Sign Up</span>
-                </a>
+                </Link>
 
-                <a className="flex items-center gap-1 hover:text-blue-600" href="#">
+                <a
+                  className="flex items-center gap-1 hover:text-blue-600"
+                  href="#"
+                >
                   <BsCart className="text-[#008ECC]" />
                   <span className="hidden sm:inline">Cart</span>
                 </a>
               </div>
             </div>
-
           </div>
 
           {/* Optional mobile search input */}

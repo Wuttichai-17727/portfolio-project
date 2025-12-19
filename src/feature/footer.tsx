@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
     <div className="relative w-full  pl-20 mx-auto mt-10 px-4 group bg-[#008ECC] ">
-        <section className='text-white'>
+        <section className='text-white pt-10'>
             <h1 className='text-[44px] font-bold'>MegaMart</h1>
             <h3 className='mt-17 text-[20px] font-bold'>Contact Us</h3>
             <p className='text-[20px] mt-5 flex justify-inline gap-5'>
