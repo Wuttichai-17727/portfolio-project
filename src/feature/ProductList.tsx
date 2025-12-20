@@ -13,7 +13,7 @@ interface productItem {
 const products:productItem[] = [
   {
     id: 1,
-    name: 'Basic Tee',
+    name: 'Tiger',
     href: '#',
     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
@@ -22,7 +22,7 @@ const products:productItem[] = [
   },
   {
     id: 2,
-    name: 'Basic Tee',
+    name: 'Snaeck',
     href: '#',
     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-02.jpg',
     imageAlt: "Front of men's Basic Tee in white.",
@@ -31,7 +31,7 @@ const products:productItem[] = [
   },
   {
     id: 3,
-    name: 'Basic Tee',
+    name: 'Egles',
     href: '#',
     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-03.jpg',
     imageAlt: "Front of men's Basic Tee in dark gray.",
@@ -40,7 +40,7 @@ const products:productItem[] = [
   },
   {
     id: 4,
-    name: 'Artwork Tee',
+    name: 'Lionking',
     href: '#',
     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-04.jpg',
     imageAlt: "Front of men's Artwork Tee in peach with white and brown dots forming an isometric cube.",
@@ -49,7 +49,7 @@ const products:productItem[] = [
   },
   {
     id: 5,
-    name: 'Artwork Tee',
+    name: 'Floppy',
     href: '#',
     imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-04.jpg',
     imageAlt: "Front of men's Artwork Tee in peach with white and brown dots forming an isometric cube.",
@@ -57,8 +57,13 @@ const products:productItem[] = [
     color: 'Iso Dots',
   },
 ]
-
-export default function ProductList() {
+interface ProductListProps {
+  searchTerm?: string;
+}
+export default function ProductList({ searchTerm = "" }: ProductListProps) {
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <div className="bg-white">
       <div className=" mx-auto max-w-full px-4 py-8 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
@@ -67,7 +72,7 @@ export default function ProductList() {
         
             <Link to='product'>
             <div className="flex items-center">
-            <a className="text-base text-gray-400 tracking-tight" href="#">View All</a><MdNavigateNext className="text-[#008ECC] text-xl sm:text-2xl"/>
+            <span className="text-base text-gray-400 tracking-tight" >View All</span><MdNavigateNext className="text-[#008ECC] text-xl sm:text-2xl"/>
              </div>
             </Link>
             
@@ -76,7 +81,7 @@ export default function ProductList() {
         
         
         <div className=" mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <div key={product.id} className="group relative lg:h-full  ">
               <img
                 alt={product.imageAlt}
@@ -99,7 +104,9 @@ export default function ProductList() {
           ))}
         </div>
         
-        
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-10 text-gray-500">ไม่พบสินค้าที่ตรงกับ "{searchTerm}"</div>
+        )}
       </div>
     </div>
   )

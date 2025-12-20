@@ -3,7 +3,12 @@ import HamburgerMenu from "./Events/hamburgerMenu";
 import { FaSearch, FaRegUser } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+
+interface NavbarProps {
+  onSearch?: (value: string) => void;
+}
+
+const Navbar = ({ onSearch }: NavbarProps) => {
   return (
     <Disclosure
       as="nav"
@@ -21,16 +26,17 @@ const Navbar = () => {
                 </h1>
               </Link>
               {/* Search bar (hidden on small screens) */}
-              <div className="hidden md:flex flex-grow max-w-xl items-center rounded-md bg-gray-100 px-3 py-1.5 border border-transparent focus-within:border-blue-500 focus-within:bg-white transition-all ml-5">
+              
+            </div>
+            <div className="flex flex-grow max-w-xl items-center rounded-md bg-gray-100 px-3 py-1.5 border border-transparent focus-within:border-blue-500 focus-within:bg-white transition-all ml-5">
                 <FaSearch className="text-gray-500 mr-2 text-lg" />
                 <input
                   className="w-full outline-none bg-transparent text-sm md:text-base"
                   type="text"
                   placeholder="Search"
+                  onChange={(e) => onSearch?.(e.target.value)}
                 />
               </div>
-            </div>
-
             {/* Right Section */}
             <div className="flex items-center gap-x-4">
               {/* Sign In / Cart */}
@@ -55,7 +61,7 @@ const Navbar = () => {
           </div>
 
           {/* Optional mobile search input */}
-          <div className="md:hidden mt-2 flex items-center px-2">
+          {/* <div className="md:hidden mt-2 flex items-center px-2">
             <div className="flex-grow flex items-center rounded-md bg-gray-100 px-3 py-1.5 border border-transparent focus-within:border-blue-500 focus-within:bg-white transition-all">
               <FaSearch className="text-gray-500 mr-2 text-lg" />
               <input
@@ -64,7 +70,7 @@ const Navbar = () => {
                 placeholder="Search"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       )}
     </Disclosure>

@@ -1,4 +1,5 @@
-import Navbar from "../Navbar"
+import { useState } from "react";
+import Navbar from "../Navbar";
 interface productItem {
     id : number;
     name: string;
@@ -56,12 +57,17 @@ const products:productItem[] = [
     color: 'Iso Dots',
   },
 ]
-
 export default function ProductList() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // ฟังก์ชันหลักในการกรอง
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
      return (
     
     <div className="bg-white">
-        <Navbar/>
+        <Navbar onSearch={(value) => setSearchTerm(value)} />
       <div className=" mx-auto max-w-full px-4 py-8 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
         <div className=" border-b  border-gray-200 justify-between flex  items-center mb-5 pb-3">
         <h2 className="text-[24px]  tracking-tight text-[#666666]">Please enjoy your <span className="text-blue-500 font-bold">Shopping time!</span></h2>
@@ -70,11 +76,10 @@ export default function ProductList() {
         
         
         <div className=" mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {products.map((product) => (
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
             <div key={product.id} className="group relative lg:h-full  ">
-              <img
-                alt={product.imageAlt}
-                src={product.imageSrc}
+              <img alt={product.imageAlt} src={product.imageSrc}
                 className="w-full h-auto object-cover rounded-md"
               />
               <div className="mt-4 flex justify-between items-center">
@@ -90,11 +95,15 @@ export default function ProductList() {
                 <p className="text-sm font-medium text-gray-900">{product.price}</p>
               </div>
             </div>
-          ))}
+          ))): (
+            <p className="col-span-full text-center py-10 text-gray-500">
+              No products found matching "{searchTerm}"
+            </p>
+          )}
         </div>
         
         
       </div>
     </div>
-  )
+  );
 }
