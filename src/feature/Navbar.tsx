@@ -15,11 +15,11 @@ const Navbar = () => {
             {/* Left Section */}
             <div className="flex items-center gap-x-4">
               <HamburgerMenu />
-
-              <h1 className="text-blue-600 dark:text-sky-400 text-xl sm:text-2xl md:text-3xl font-bold">
-                Megamart
-              </h1>
-
+              <Link to="/">
+                <h1 className="text-blue-600 dark:text-sky-400 text-xl sm:text-2xl md:text-3xl font-bold">
+                  Megamart
+                </h1>
+              </Link>
               {/* Search bar (hidden on small screens) */}
               <div className="hidden md:flex flex-grow max-w-xl items-center rounded-md bg-gray-100 px-3 py-1.5 border border-transparent focus-within:border-blue-500 focus-within:bg-white transition-all ml-5">
                 <FaSearch className="text-gray-500 mr-2 text-lg" />
@@ -35,7 +35,8 @@ const Navbar = () => {
             <div className="flex items-center gap-x-4">
               {/* Sign In / Cart */}
               <div className="flex items-center gap-x-4 text-gray-600 text-sm md:text-base">
-                <Link to="/signin"
+                <Link
+                  to="/signin"
                   className="flex items-center gap-1 hover:text-blue-600"
                 >
                   <FaRegUser className="text-[#008ECC]" />

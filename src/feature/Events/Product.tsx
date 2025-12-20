@@ -1,5 +1,4 @@
-import { MdNavigateNext } from "react-icons/md";
-import { Link } from "react-router-dom";
+import Navbar from "../Navbar"
 interface productItem {
     id : number;
     name: string;
@@ -59,19 +58,14 @@ const products:productItem[] = [
 ]
 
 export default function ProductList() {
-  return (
+     return (
+    
     <div className="bg-white">
+        <Navbar/>
       <div className=" mx-auto max-w-full px-4 py-8 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
         <div className=" border-b  border-gray-200 justify-between flex  items-center mb-5 pb-3">
-        <h2 className="text-[24px]  tracking-tight text-[#666666]">Grab amazing deals on  <span className="text-blue-500 font-bold">fashion items now!</span></h2>
-        
-            <Link to='product'>
-            <div className="flex items-center">
-            <a className="text-base text-gray-400 tracking-tight" href="#">View All</a><MdNavigateNext className="text-[#008ECC] text-xl sm:text-2xl"/>
-             </div>
-            </Link>
-            
-       
+        <h2 className="text-[24px]  tracking-tight text-[#666666]">Please enjoy your <span className="text-blue-500 font-bold">Shopping time!</span></h2>
+      
         </div>
         
         

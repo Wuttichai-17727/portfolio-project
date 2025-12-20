@@ -22,7 +22,8 @@ const ads: Adslide[] = [
         image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0fGVufDB8fHx8MTc2NjExMzIwM3ww&ixlib=rb-4.1.0&fit=max&q=80",
         cta:"Let's shop"
     },
-    {   id:2,
+    { 
+       id:2,
         title:"sign up for coupon free delivery",
         description: "Promotion for members",
         image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=M3w4MjcwNjd8MHwxfHNlYXJjaHwzfHxwcm9kdWN0fGVufDB8fHx8MTc2NjExMzIwM3ww&ixlib=rb-4.1.0&fit=max&q=80",

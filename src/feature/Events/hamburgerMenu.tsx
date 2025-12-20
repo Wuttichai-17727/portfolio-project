@@ -1,11 +1,14 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 export default function HamburgerMenu() {
   return (
     <Menu as="div" className=" relative inline-block">
       <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-gray-50">
-  
-        <RxHamburgerMenu aria-hidden="true" className="-mr-1 size-7 text-[#008ECC]" />
+        <RxHamburgerMenu
+          aria-hidden="true"
+          className="-mr-1 size-7 text-[#008ECC]"
+        />
       </MenuButton>
 
       <MenuItems
@@ -14,12 +17,14 @@ export default function HamburgerMenu() {
       >
         <div className="py-1">
           <MenuItem>
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
-            >
-              Account settings
-            </a>
+            <Link to="/">
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+              >
+                Home
+              </a>
+            </Link>
           </MenuItem>
           <MenuItem>
             <a
@@ -50,5 +55,5 @@ export default function HamburgerMenu() {
         </div>
       </MenuItems>
     </Menu>
-  )
+  );
 }
