@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const SignIn = () => {
   return (
     <>
@@ -68,12 +68,15 @@ const SignIn = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500 dark:text-gray-400">
             Not a member?{' '}
-            <a
+            <Link to='/signup'>
+              <a
               href="#"
               className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
             >
               Let's apply for membership. 
             </a>
+            </Link>
+            
           </p>
         </div>
       </div>
